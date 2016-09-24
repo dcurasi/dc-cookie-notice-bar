@@ -95,9 +95,52 @@ class Dc_Cookie_Notice_Bar_Admin {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
+		// Add the color picker css file       
+        wp_enqueue_style( 'wp-color-picker' ); 
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/dc-cookie-notice-bar-admin.js', array( 'jquery', 'wp-color-picker' ), $this->version, false );
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/dc-cookie-notice-bar-admin.js', array( 'jquery' ), $this->version, false );
+	}
 
+	//inizializzazione menu di amministrazione
+	function add_menu_page()
+	{
+	    add_menu_page('Cookie Notice Bar','Cookie Notice Bar', 'manage_options', 'dc-cnb-menu-page', array( $this,'create_admin_interface' ), 'dashicons-smiley');
+	}
+
+	/**
+	 * Callback function for the admin settings page.
+	 *
+	 * @since    1.0.0
+	 */
+	public function create_admin_interface(){
+
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/partials/dc-cookie-notice-bar-admin-display.php';
+
+	}
+
+	/**
+	 * Creates our settings sections with fields etc.
+	 *
+	 * @since    1.0.0
+	 */
+	public function settings_api_init(){
+		register_setting('dc_cnb_options_group', 'dc_cnb_activate');
+	    register_setting('dc_cnb_options_group', 'dc_cnb_message');
+	    register_setting('dc_cnb_options_group', 'dc_cnb_button_text');
+	    register_setting('dc_cnb_options_group', 'dc_cnb_time');
+	    register_setting('dc_cnb_options_group', 'dc_cnb_read_more_text');
+	    register_setting('dc_cnb_options_group', 'dc_cnb_read_more_link');
+	    register_setting('dc_cnb_options_group', 'dc_cnb_read_more_target');
+	    register_setting('dc_cnb_options_group', 'dc_cnb_position');
+	    register_setting('dc_cnb_options_group', 'dc_cnb_text_background');
+	    register_setting('dc_cnb_options_group', 'dc_cnb_text_color');
+	    register_setting('dc_cnb_options_group', 'dc_cnb_button_background');
+	    register_setting('dc_cnb_options_group', 'dc_cnb_button_color');
+	}
+
+	//shortcode
+	public function dc_read_more_link() {
+	    return '<a href="'.get_option('dc_cnb_read_more_link').'" target="'.get_option('dc_cnb_read_more_target').'">'.get_option('dc_cnb_read_more_text').'</a>';
 	}
 
 }

@@ -74,7 +74,24 @@ class Dc_Cookie_Notice_Bar_Public {
 		 */
 
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/dc-cookie-notice-bar-public.css', array(), $this->version, 'all' );
+		
+		$option_css = '#dc-cnb-container {
+					    	'.get_option('dc_cnb_position').': 0;
+						    background-color: '.get_option('dc_cnb_text_background').';
+						    color: '.get_option('dc_cnb_text_color').';
+						}
 
+						#dc-cnb-button {
+						    background-color: '.get_option('dc_cnb_button_background').';
+						    color: '.get_option('dc_cnb_button_color').';
+						}';
+		/*
+		if(isset($_COOKIE['dc_cnb_cookie'])) {
+			$option_css.= '#dc-cnb-container {display: none !important}';
+		}
+		*/
+
+		wp_add_inline_style( $this->plugin_name, $option_css );
 	}
 
 	/**
@@ -97,7 +114,52 @@ class Dc_Cookie_Notice_Bar_Public {
 		 */
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/dc-cookie-notice-bar-public.js', array( 'jquery' ), $this->version, false );
-
+		//passo la variabile php var al js. ajax_url per chiamare una funzione php in ajax
+		wp_localize_script( $this->plugin_name, 'php_var', array(
+				'ajax_url' => admin_url( 'admin-ajax.php' )
+		));
 	}
 
+	/**
+	 * Callback function for the public page.
+	 *
+	 * @since    1.0.0
+	 */
+	public function create_public_interface(){
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/dc-cookie-notice-bar-public-display.php';
+	}
+
+	public function dc_cnb_cookie() {
+		switch (get_option('dc_cnb_time')) {
+		    case 'day':
+		        $cookie_time = 86400;
+		        break;
+		    case 'week':
+		        $cookie_time = 604800;
+		        break;
+		    case 'month':
+		        $cookie_time = 86400 * 30;
+		        break;
+		    case '3months':
+		        $cookie_time = 86400 * 90;
+		        break;
+		    case '6months':
+		        $cookie_time = 86400 * 180;
+		        break;
+		    case 'year':
+		        $cookie_time = 86400 * 365;
+		        break;
+		    case 'infinity':
+		        $cookie_time = 86400 * 36500;
+		        break;
+		}
+	    if(!isset($_COOKIE['dc_cnb_cookie'])) {
+		    echo "Cookie named 'dc_cnb_cookie' is not set!";
+		} else {
+		    echo "Cookie 'dc_cnb_cookie' is set!<br>";
+		    echo "Value is: " . $cookie_time;
+		}
+	    setcookie("dc_cnb_cookie", 'true', time()+$cookie_time, "/");
+	    die();
+	}
 }

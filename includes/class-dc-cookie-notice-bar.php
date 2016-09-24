@@ -153,6 +153,10 @@ class Dc_Cookie_Notice_Bar {
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
+		$this->loader->add_action( 'admin_menu', $plugin_admin, 'add_menu_page' );
+		$this->loader->add_action( 'admin_init', $plugin_admin, 'settings_api_init' );
+		$this->loader->add_shortcode('dc-cnb-read-more', $plugin_admin, 'dc_read_more_link', $priority = 10, $accepted_args = 2 );
+
 
 	}
 
@@ -167,9 +171,16 @@ class Dc_Cookie_Notice_Bar {
 
 		$plugin_public = new Dc_Cookie_Notice_Bar_Public( $this->get_plugin_name(), $this->get_version() );
 
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
-
+		if( get_option( 'dc_cnb_activate' ) ) {
+			if(!isset($_COOKIE['dc_cnb_cookie'])) {
+				$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
+				$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+				$this->loader->add_action( 'wp_footer', $plugin_public, 'create_public_interface' );
+				//per aggiungere la funzione alla chiamata ajax (nopriv not auth, priv auth)
+				$this->loader->add_action( 'wp_ajax_nopriv_dc_cnb_cookie', $plugin_public, 'dc_cnb_cookie' );
+				$this->loader->add_action( 'wp_ajax_dc_cnb_cookie', $plugin_public, 'dc_cnb_cookie' );
+			}
+		}
 	}
 
 	/**

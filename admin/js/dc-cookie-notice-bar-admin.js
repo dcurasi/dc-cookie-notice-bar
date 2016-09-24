@@ -28,5 +28,10 @@
 	 * Although scripts in the WordPress core, Plugins and Themes may be
 	 * practising this, we should strive to set a better example in our own work.
 	 */
-
+	 jQuery(document).ready(function($){
+	    $('#dc_cnb_text_background').wpColorPicker();
+	    $('#dc_cnb_text_color').wpColorPicker();
+	    $('#dc_cnb_button_background').wpColorPicker();
+	    $('#dc_cnb_button_color').wpColorPicker();
+	});
 })( jQuery );

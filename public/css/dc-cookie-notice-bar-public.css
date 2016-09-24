@@ -2,3 +2,19 @@
  * All of the CSS for your public-facing functionality should be
  * included in this file.
  */
+ #dc-cnb-container {
+ 	position: fixed;
+    display: block;
+    left: 0;
+    text-align: center;
+    z-index: 9999999;
+    height: auto;
+    width: 100%;
+    padding: 10px 20px;
+ }
+
+ #dc-cnb-button {
+ 	padding: 5px 10px;
+    border-radius: 8px;
+    margin-left: 8px;
+ }
