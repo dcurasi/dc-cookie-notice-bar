@@ -30,7 +30,18 @@ class Dc_Cookie_Notice_Bar_Deactivator {
 	 * @since    1.0.0
 	 */
 	public static function deactivate() {
-
+		delete_option('dc_cnb_activate');
+	    delete_option('dc_cnb_message');
+	    delete_option('dc_cnb_button_text');
+	    delete_option('dc_cnb_time');
+	    delete_option('dc_cnb_read_more_text');
+	    delete_option('dc_cnb_read_more_link');
+	    delete_option('dc_cnb_read_more_target');
+	    delete_option('dc_cnb_position');
+	    delete_option('dc_cnb_text_background');
+	    delete_option('dc_cnb_text_color');
+	    delete_option('dc_cnb_button_background');
+	    delete_option('dc_cnb_button_color');
 	}
 
 }

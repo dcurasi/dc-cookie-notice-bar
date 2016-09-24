@@ -14,3 +14,8 @@
 ?>
 
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
+<div id="dc-cnb-container">
+	<p id="dc-cnb-text">
+		<?php echo do_shortcode(get_option('dc_cnb_message')); ?> <a id="dc-cnb-button" href="#"><?php echo get_option('dc_cnb_button_text'); ?></a>
+	</p>
+</div>

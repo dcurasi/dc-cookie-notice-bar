@@ -28,5 +28,14 @@
 	 * Although scripts in the WordPress core, Plugins and Themes may be
 	 * practising this, we should strive to set a better example in our own work.
 	 */
-
+	$( document ).on( 'click', '#dc-cnb-button', function() {
+		$('#dc-cnb-container').fadeOut();
+		jQuery.ajax({
+			url : php_var.ajax_url,
+			type : 'post',
+			data : {
+				action : 'dc_cnb_cookie',
+			}
+		});
+	});
 })( jQuery );
