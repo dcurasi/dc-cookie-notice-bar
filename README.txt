@@ -17,7 +17,7 @@ Cookie Notice Bar allows you to add a simple bar to inform users that your site 
 Cookie Notice Bar allows you to add a simple bar to inform users that your site uses cookies according to EU law. It is based on the [WordPress Plugin Boilerplate] (https://github.com/DevinVinson/WordPress-Plugin-Boilerplate).
 
 
-=Features include:=
+= Features include =
 
 * Customize the cookie message
 * Select the position of the cookie message box
@@ -25,7 +25,6 @@ Cookie Notice Bar allows you to add a simple bar to inform users that your site 
 * Set cookie expiry
 * Set the text and bar background colors
 * Set the text and background color of the accepted button
-
 
 
 = Available Languages =
