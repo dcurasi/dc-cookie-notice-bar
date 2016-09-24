@@ -157,7 +157,7 @@
                    <th scope="row"></th>
                    <td>
                        <p>
-                           <input type="submit" class="button-primary save-options" id="submit" name="submit" value="Salva le modifiche">
+                           <input type="submit" class="button-primary save-options" id="submit" name="submit" value="Save options">
                        </p>
                    </td>
                 </tr>
