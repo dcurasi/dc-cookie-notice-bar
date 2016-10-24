@@ -64,12 +64,12 @@ class Dc_Cookie_Notice_Bar {
 	 * Load the dependencies, define the locale, and set the hooks for the admin area and
 	 * the public-facing side of the site.
 	 *
-	 * @since    1.0.0
+	 * @since    1.1.0
 	 */
 	public function __construct() {
 
 		$this->plugin_name = 'dc-cookie-notice-bar';
-		$this->version = '1.0.0';
+		$this->version = '1.1.0';
 
 		$this->load_dependencies();
 		$this->set_locale();
@@ -164,7 +164,7 @@ class Dc_Cookie_Notice_Bar {
 	 * Register all of the hooks related to the public-facing functionality
 	 * of the plugin.
 	 *
-	 * @since    1.0.0
+	 * @since    1.1.0
 	 * @access   private
 	 */
 	private function define_public_hooks() {
@@ -172,7 +172,7 @@ class Dc_Cookie_Notice_Bar {
 		$plugin_public = new Dc_Cookie_Notice_Bar_Public( $this->get_plugin_name(), $this->get_version() );
 
 		if( get_option( 'dc_cnb_activate' ) ) {
-			if(!isset($_COOKIE['dc_cnb_cookie'])) {
+			if(!isset($_COOKIE['dc_cnb_cookie']) || get_option( 'dc_cnb_debug_mode' )) {
 				$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 				$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 				$this->loader->add_action( 'wp_footer', $plugin_public, 'create_public_interface' );

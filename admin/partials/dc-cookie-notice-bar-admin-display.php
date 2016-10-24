@@ -152,12 +152,46 @@
                         <p class="description">The text color of the button to accept the usage of the cookies.</p>
                     </td>
                 </tr>
-                
+                <tr valign="top">
+                    <th scope="row">
+                        <label for="dc_cnb_button_padding">Button Padding</label>
+                    </th>
+                    <td>
+                        <input type="text" id="dc_cnb_button_padding" value="<?php echo get_option('dc_cnb_button_padding'); ?>" name="dc_cnb_button_padding" class="regular-text">
+                        <p class="description">The padding of the button to accept the usage of the cookies  (e.g. 5px 10px).</p>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <th scope="row">
+                        <label for="dc_cnb_button_border_radius">Button Border Radius</label>
+                    </th>
+                    <td>
+                        <input type="text" id="dc_cnb_button_border_radius" value="<?php echo get_option('dc_cnb_button_border_radius'); ?>" name="dc_cnb_button_border_radius" class="regular-text">
+                        <p class="description">The border radius of the button to accept the usage of the cookies (e.g. 8px).</p>
+                    </td>
+                </tr>
+            </tbody>
+       </table>
+
+       <h2>Advanced</h2>
+        <table class="form-table">
+            <tbody>
+                <tr valign="top">
+                    <th scope="row">
+                        <label for="dc_cnb_debug_mode">Debug Mode</label>
+                    </th>
+                    <td>
+                      <label for="dc_cnb_debug_mode">
+                          <input type="checkbox" id="dc_cnb_debug_mode" value="1" <?php checked(get_option('dc_cnb_debug_mode'), 1); ?> name="dc_cnb_debug_mode"> Activate Debug Mode
+                      </label>
+                      <p class="description">When debug mode is active the Cookie Notice Bar is always displayed.</p>
+                    </td>
+                </tr>
                 <tr valign="top">
                    <th scope="row"></th>
                    <td>
                        <p>
-                           <input type="submit" class="button-primary save-options" id="submit" name="submit" value="Save options">
+                           <?php submit_button(); ?>
                        </p>
                    </td>
                 </tr>

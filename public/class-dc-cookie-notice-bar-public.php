@@ -57,7 +57,7 @@ class Dc_Cookie_Notice_Bar_Public {
 	/**
 	 * Register the stylesheets for the public-facing side of the site.
 	 *
-	 * @since    1.0.0
+	 * @since    1.1.0
 	 */
 	public function enqueue_styles() {
 
@@ -84,6 +84,8 @@ class Dc_Cookie_Notice_Bar_Public {
 						#dc-cnb-button {
 						    background-color: '.get_option('dc_cnb_button_background').';
 						    color: '.get_option('dc_cnb_button_color').';
+						    padding: '.get_option('dc_cnb_button_padding').';
+						    border-radius: '.get_option('dc_cnb_button_border_radius').';
 						}';
 		/*
 		if(isset($_COOKIE['dc_cnb_cookie'])) {
@@ -152,12 +154,6 @@ class Dc_Cookie_Notice_Bar_Public {
 		    case 'infinity':
 		        $cookie_time = 86400 * 36500;
 		        break;
-		}
-	    if(!isset($_COOKIE['dc_cnb_cookie'])) {
-		    echo "Cookie named 'dc_cnb_cookie' is not set!";
-		} else {
-		    echo "Cookie 'dc_cnb_cookie' is set!<br>";
-		    echo "Value is: " . $cookie_time;
 		}
 	    setcookie("dc_cnb_cookie", 'true', time()+$cookie_time, "/");
 	    die();

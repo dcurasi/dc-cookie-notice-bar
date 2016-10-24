@@ -1,6 +1,6 @@
 === Cookie Notice Bar ===
 
-Donate link:
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KZRGHFSGGRXU6
 Contributors: dcurasi
 Tags: cookie, cookie notice, cookie bar, cookie law, cookie notice bar, eu cookie, privacy, cookie policy, notice, bar, consent, notification, privacy directive, notify
 Requires at least: 3.0.1
@@ -25,6 +25,8 @@ Cookie Notice Bar allows you to add a simple bar to inform users that your site 
 * Set cookie expiry
 * Set the text and bar background colors
 * Set the text and background color of the accepted button
+* Set the padding and the border radius of the accepted button
+* Debug Mode for displayed always the cookie notice bar
 
 
 = Available Languages =
@@ -46,6 +48,18 @@ Cookie Notice Bar allows you to add a simple bar to inform users that your site 
 
 
 == Changelog ==
+
+= 1.1.0 - 24/10/16 =
+* Dev - Added debug mode
+* Dev - Added the ability to change the padding of the accepted button
+* Dev - Added the ability to change the border radius of the accepted button
+* Fix - Removed the href attribute from the accepted button
+* Fix - Removed the text decoration from the accepted button
+* Fix - Fixed submit button of the admin panel
+* Fix - Cookies deleted when the plugin is deactivated
+* Tweak - Changed the method for displaying the confirmation message for saved options
+* Dev - Added donation link
+* Dev - Removed debug message
 
 = 1.0 =
 * Initial public version

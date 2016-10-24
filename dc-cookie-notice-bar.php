@@ -9,14 +9,14 @@
  * that starts the plugin.
  *
  * @link              https://github.com/dcurasi
- * @since             1.0.0
+ * @since             1.1.0
  * @package           Dc_Cookie_Notice_Bar
  *
  * @wordpress-plugin
  * Plugin Name:       Cookie Notice Bar
  * Plugin URI:        https://github.com/dcurasi/dc-cookie-notice-bar
  * Description:       Cookie Notice Bar allows you to add a simple bar to inform users that your site uses cookies according to EU law.
- * Version:           1.0.0
+ * Version:           1.1.0
  * Author:            Dario Curasì
  * Author URI:        https://github.com/dcurasi
  * License:           GPL-2.0+

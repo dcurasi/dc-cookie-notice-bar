@@ -121,7 +121,7 @@ class Dc_Cookie_Notice_Bar_Admin {
 	/**
 	 * Creates our settings sections with fields etc.
 	 *
-	 * @since    1.0.0
+	 * @since    1.1.0
 	 */
 	public function settings_api_init(){
 		register_setting('dc_cnb_options_group', 'dc_cnb_activate');
@@ -136,6 +136,9 @@ class Dc_Cookie_Notice_Bar_Admin {
 	    register_setting('dc_cnb_options_group', 'dc_cnb_text_color');
 	    register_setting('dc_cnb_options_group', 'dc_cnb_button_background');
 	    register_setting('dc_cnb_options_group', 'dc_cnb_button_color');
+	    register_setting('dc_cnb_options_group', 'dc_cnb_button_padding');
+	    register_setting('dc_cnb_options_group', 'dc_cnb_button_border_radius');
+	    register_setting('dc_cnb_options_group', 'dc_cnb_debug_mode');
 	}
 
 	//shortcode
