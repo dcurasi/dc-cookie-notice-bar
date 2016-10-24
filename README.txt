@@ -49,6 +49,9 @@ Cookie Notice Bar allows you to add a simple bar to inform users that your site 
 
 == Changelog ==
 
+= 1.1.1 - 24/10/16 =
+* Fix - Fix the style of the accepted button
+
 = 1.1.0 - 24/10/16 =
 * Dev - Added debug mode
 * Dev - Added the ability to change the padding of the accepted button
