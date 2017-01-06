@@ -141,9 +141,31 @@ class Dc_Cookie_Notice_Bar_Admin {
 	    register_setting('dc_cnb_options_group', 'dc_cnb_debug_mode');
 	}
 
-	//shortcode
+	/**
+	 * shortcode
+	 *
+	 * @since    1.2.0
+	 */
 	public function dc_read_more_link() {
-	    return '<a href="'.get_option('dc_cnb_read_more_link').'" target="'.get_option('dc_cnb_read_more_target').'">'.get_option('dc_cnb_read_more_text').'</a>';
+		if ( in_array( 'polylang/polylang.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) && function_exists('pll__') ) {
+	    	return '<a href="'.get_option('dc_cnb_read_more_link').'" target="'.get_option('dc_cnb_read_more_target').'">'.pll__(get_option('dc_cnb_read_more_text')).'</a>';
+	    }
+	    else {
+	    	return '<a href="'.get_option('dc_cnb_read_more_link').'" target="'.get_option('dc_cnb_read_more_target').'">'.get_option('dc_cnb_read_more_text').'</a>';
+	    }
+	}
+
+	/**
+	 * register string in polylang
+	 *
+	 * @since    1.2.0
+	 */
+	public function dc_register_string_polylang() {
+		if (function_exists('pll_register_string')) {
+			pll_register_string('dc-cookie-notice-bar', get_option('dc_cnb_message'));
+			pll_register_string('dc-cookie-notice-bar', get_option('dc_cnb_button_text'));
+			pll_register_string('dc-cookie-notice-bar', get_option('dc_cnb_read_more_text'));
+		}
 	}
 
 }

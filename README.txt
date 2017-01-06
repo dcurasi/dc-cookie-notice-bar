@@ -27,11 +27,14 @@ Cookie Notice Bar allows you to add a simple bar to inform users that your site 
 * Set the text and background color of the accepted button
 * Set the padding and the border radius of the accepted button
 * Debug Mode for displayed always the cookie notice bar
+* Polylang compatible
+* .pot file for translations included
 
 
 = Available Languages =
 
-* English - UNITED KINGDOM
+* English
+* Italiano
 
 
 == Installation ==
@@ -42,12 +45,24 @@ Cookie Notice Bar allows you to add a simple bar to inform users that your site 
 4. Go to Cookie Notice Bar for change the default options
 
 
+== Frequently Asked Questions ==
+
+= Can I contribute to the project? =
+
+If you want to contribute to the project please contact me (curasi.d87@gmail.com).
+This is the GitHub Repository [dc-cookie-notice-bar](https://github.com/dcurasi/dc-cookie-notice-bar).
+
+
 == Screenshots ==
 
 1. The admin panel
 
 
 == Changelog ==
+
+= 1.2.0 - 06/01/17 =
+* New - Added compatibility with Polylang
+* New - Added Italian translation
 
 = 1.1.1 - 24/10/16 =
 * Fix - Fix the style of the accepted button

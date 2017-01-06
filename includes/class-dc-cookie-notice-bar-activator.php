@@ -27,14 +27,14 @@ class Dc_Cookie_Notice_Bar_Activator {
 	 *
 	 * Long Description.
 	 *
-	 * @since    1.1.0
+	 * @since    1.2.0
 	 */
 	public static function activate() {
 		add_option('dc_cnb_activate', 1);
-	    add_option('dc_cnb_message', 'We use cookies to ensure that we give you the best experience on our website. If you continue to use this site we will assume that you are happy with it.');
-	    add_option('dc_cnb_button_text', 'Ok');
+	    add_option('dc_cnb_message', __( 'We use cookies to ensure that we give you the best experience on our website. If you continue to use this site we will assume that you are happy with it.', 'dc-cookie-notice-bar' ));
+	    add_option('dc_cnb_button_text', __( 'Ok', 'dc-cookie-notice-bar' ));
 	    add_option('dc_cnb_time', '3months');
-	    add_option('dc_cnb_read_more_text', 'Read More');
+	    add_option('dc_cnb_read_more_text', __( 'Read More', 'dc-cookie-notice-bar' ));
 	    add_option('dc_cnb_read_more_link', '#');
 	    add_option('dc_cnb_read_more_target', '_blank');
 	    add_option('dc_cnb_position', 'bottom');

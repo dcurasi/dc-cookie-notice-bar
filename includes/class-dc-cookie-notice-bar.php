@@ -64,12 +64,12 @@ class Dc_Cookie_Notice_Bar {
 	 * Load the dependencies, define the locale, and set the hooks for the admin area and
 	 * the public-facing side of the site.
 	 *
-	 * @since    1.1.0
+	 * @since    1.2.0
 	 */
 	public function __construct() {
 
 		$this->plugin_name = 'dc-cookie-notice-bar';
-		$this->version = '1.1.1';
+		$this->version = '1.2.0';
 
 		$this->load_dependencies();
 		$this->set_locale();
@@ -156,7 +156,9 @@ class Dc_Cookie_Notice_Bar {
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'add_menu_page' );
 		$this->loader->add_action( 'admin_init', $plugin_admin, 'settings_api_init' );
 		$this->loader->add_shortcode('dc-cnb-read-more', $plugin_admin, 'dc_read_more_link', $priority = 10, $accepted_args = 2 );
-
+		if ( in_array( 'polylang/polylang.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+			$this->loader->add_action( 'plugins_loaded', $plugin_admin, 'dc_register_string_polylang' );
+		}
 
 	}
 
