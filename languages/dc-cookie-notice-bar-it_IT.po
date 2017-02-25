@@ -1,9 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Cookie Notice Bar\n"
-"POT-Creation-Date: 2017-01-06 15:24+0100\n"
-"PO-Revision-Date: 2017-01-06 15:35+0100\n"
+"POT-Creation-Date: 2017-01-21 17:49+0100\n"
+"PO-Revision-Date: 2017-01-21 17:54+0100\n"
+"Last-Translator: \n"
 "Language-Team: Dario Curasì <curasi.d87@gmail.com>\n"
+"Language: it_IT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12,8 +14,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e\n"
-"Last-Translator: \n"
-"Language: it_IT\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: admin/partials/dc-cookie-notice-bar-admin-display.php:17
@@ -189,19 +189,36 @@ msgstr ""
 "Il border radius del pulsante per accettare l'utilizzo dei cookie (esempio "
 "8px)."
 
-#: admin/partials/dc-cookie-notice-bar-admin-display.php:176
+#: admin/partials/dc-cookie-notice-bar-admin-display.php:175
+msgid "Read More Color"
+msgstr "Leggi di Più Colore"
+
+#: admin/partials/dc-cookie-notice-bar-admin-display.php:179
+msgid "The color of the Read More text."
+msgstr "Il colore del testo Leggi di Più."
+
+#: admin/partials/dc-cookie-notice-bar-admin-display.php:184
+msgid "Read More Hover Color"
+msgstr "Leggi di Più Colore Hover"
+
+#: admin/partials/dc-cookie-notice-bar-admin-display.php:188
+msgid "The color of the Read More text on hover."
+msgstr ""
+"Il colore del testo Leggi di più al passaggio del mouse sopra il testo."
+
+#: admin/partials/dc-cookie-notice-bar-admin-display.php:194
 msgid "Advanced"
 msgstr "Avanzato"
 
-#: admin/partials/dc-cookie-notice-bar-admin-display.php:181
+#: admin/partials/dc-cookie-notice-bar-admin-display.php:199
 msgid "Debug Mode"
 msgstr "Modalità Debug"
 
-#: admin/partials/dc-cookie-notice-bar-admin-display.php:185
+#: admin/partials/dc-cookie-notice-bar-admin-display.php:203
 msgid "Activate Debug Mode"
 msgstr "Attiva Modalità Debug"
 
-#: admin/partials/dc-cookie-notice-bar-admin-display.php:187
+#: admin/partials/dc-cookie-notice-bar-admin-display.php:205
 msgid "When debug mode is active the Cookie Notice Bar is always displayed."
 msgstr ""
 "Quando la modalità debug è attiva la barra dei cookie viene sempre "
@@ -213,8 +230,8 @@ msgid ""
 "website. If you continue to use this site we will assume that you are happy "
 "with it."
 msgstr ""
-"Utilizziamo i cookie per darvi la migliore esperienza sul nostro sito. Se "
-"si continua a utilizzare questo sito assumeremo che siete felici con esso."
+"Utilizziamo i cookie per darvi la migliore esperienza sul nostro sito. Se si "
+"continua a utilizzare questo sito assumeremo che siete felici con esso."
 
 #: includes/class-dc-cookie-notice-bar-activator.php:35
 msgid "Ok"

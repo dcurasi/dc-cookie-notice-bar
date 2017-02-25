@@ -121,7 +121,7 @@ class Dc_Cookie_Notice_Bar_Admin {
 	/**
 	 * Creates our settings sections with fields etc.
 	 *
-	 * @since    1.1.0
+	 * @since    1.3.0
 	 */
 	public function settings_api_init(){
 		register_setting('dc_cnb_options_group', 'dc_cnb_activate');
@@ -138,20 +138,22 @@ class Dc_Cookie_Notice_Bar_Admin {
 	    register_setting('dc_cnb_options_group', 'dc_cnb_button_color');
 	    register_setting('dc_cnb_options_group', 'dc_cnb_button_padding');
 	    register_setting('dc_cnb_options_group', 'dc_cnb_button_border_radius');
+	    register_setting('dc_cnb_options_group', 'dc_cnb_read_more_color');
+	    register_setting('dc_cnb_options_group', 'dc_cnb_read_more_hover_color');
 	    register_setting('dc_cnb_options_group', 'dc_cnb_debug_mode');
 	}
 
 	/**
 	 * shortcode
 	 *
-	 * @since    1.2.0
+	 * @since    1.3.0
 	 */
 	public function dc_read_more_link() {
 		if ( in_array( 'polylang/polylang.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) && function_exists('pll__') ) {
-	    	return '<a href="'.get_option('dc_cnb_read_more_link').'" target="'.get_option('dc_cnb_read_more_target').'">'.pll__(get_option('dc_cnb_read_more_text')).'</a>';
+	    	return '<a id="dc-cnb-read-more" href="'.get_option('dc_cnb_read_more_link').'" target="'.get_option('dc_cnb_read_more_target').'">'.pll__(get_option('dc_cnb_read_more_text')).'</a>';
 	    }
 	    else {
-	    	return '<a href="'.get_option('dc_cnb_read_more_link').'" target="'.get_option('dc_cnb_read_more_target').'">'.get_option('dc_cnb_read_more_text').'</a>';
+	    	return '<a id="dc-cnb-read-more" href="'.get_option('dc_cnb_read_more_link').'" target="'.get_option('dc_cnb_read_more_target').'">'.get_option('dc_cnb_read_more_text').'</a>';
 	    }
 	}
 

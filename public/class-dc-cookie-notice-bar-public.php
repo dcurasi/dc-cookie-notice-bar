@@ -57,7 +57,7 @@ class Dc_Cookie_Notice_Bar_Public {
 	/**
 	 * Register the stylesheets for the public-facing side of the site.
 	 *
-	 * @since    1.1.0
+	 * @since    1.3.0
 	 */
 	public function enqueue_styles() {
 
@@ -86,6 +86,14 @@ class Dc_Cookie_Notice_Bar_Public {
 						    color: '.get_option('dc_cnb_button_color').';
 						    padding: '.get_option('dc_cnb_button_padding').';
 						    border-radius: '.get_option('dc_cnb_button_border_radius').';
+						}
+
+						#dc-cnb-read-more {
+							color: '.get_option('dc_cnb_read_more_color').';
+						}
+
+						#dc-cnb-read-more:hover {
+							color: '.get_option('dc_cnb_read_more_hover_color').';
 						}';
 		/*
 		if(isset($_COOKIE['dc_cnb_cookie'])) {

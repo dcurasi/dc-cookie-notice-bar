@@ -6,7 +6,7 @@
  * This file is used to markup the admin-facing aspects of the plugin.
  *
  * @link       https://github.com/dcurasi
- * @since      1.2.0
+ * @since      1.3.0
  *
  * @package    Dc_Cookie_Notice_Bar
  * @subpackage Dc_Cookie_Notice_Bar/admin/partials
@@ -168,6 +168,24 @@
                     <td>
                         <input type="text" id="dc_cnb_button_border_radius" value="<?php echo get_option('dc_cnb_button_border_radius'); ?>" name="dc_cnb_button_border_radius" class="regular-text">
                         <p class="description"><?php _e( 'The border radius of the button to accept the usage of the cookies (e.g. 8px).', 'dc-cookie-notice-bar' ); ?></p>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <th scope="row">
+                        <label for="dc_cnb_read_more_color"><?php _e( 'Read More Color', 'dc-cookie-notice-bar' ); ?></label>
+                    </th>
+                    <td>
+                        <input type="text" id="dc_cnb_read_more_color" value="<?php echo get_option('dc_cnb_read_more_color'); ?>" name="dc_cnb_read_more_color" class="regular-text" data-default-color="#e24545">
+                        <p class="description"><?php _e( 'The color of the Read More text.', 'dc-cookie-notice-bar' ); ?></p>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <th scope="row">
+                        <label for="dc_cnb_read_more_hover_color"><?php _e( 'Read More Hover Color', 'dc-cookie-notice-bar' ); ?></label>
+                    </th>
+                    <td>
+                        <input type="text" id="dc_cnb_read_more_hover_color" value="<?php echo get_option('dc_cnb_read_more_hover_color'); ?>" name="dc_cnb_read_more_hover_color" class="regular-text" data-default-color="#e24545">
+                        <p class="description"><?php _e( 'The color of the Read More text on hover.', 'dc-cookie-notice-bar' ); ?></p>
                     </td>
                 </tr>
             </tbody>

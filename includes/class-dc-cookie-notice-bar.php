@@ -69,7 +69,7 @@ class Dc_Cookie_Notice_Bar {
 	public function __construct() {
 
 		$this->plugin_name = 'dc-cookie-notice-bar';
-		$this->version = '1.2.0';
+		$this->version = '1.3.0';
 
 		$this->load_dependencies();
 		$this->set_locale();

@@ -33,5 +33,7 @@
 	    $('#dc_cnb_text_color').wpColorPicker();
 	    $('#dc_cnb_button_background').wpColorPicker();
 	    $('#dc_cnb_button_color').wpColorPicker();
+	    $('#dc_cnb_read_more_color').wpColorPicker();
+	    $('#dc_cnb_read_more_hover_color').wpColorPicker();
 	});
 })( jQuery );

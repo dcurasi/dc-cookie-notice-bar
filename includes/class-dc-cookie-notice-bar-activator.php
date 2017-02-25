@@ -27,7 +27,7 @@ class Dc_Cookie_Notice_Bar_Activator {
 	 *
 	 * Long Description.
 	 *
-	 * @since    1.2.0
+	 * @since    1.3.0
 	 */
 	public static function activate() {
 		add_option('dc_cnb_activate', 1);
@@ -44,6 +44,8 @@ class Dc_Cookie_Notice_Bar_Activator {
 	    add_option('dc_cnb_button_color', '#ffffff');
 	    add_option('dc_cnb_button_padding', '5px 10px');
 	    add_option('dc_cnb_button_border_radius', '8px');
+	    add_option('dc_cnb_read_more_color', '#e24545');
+	    add_option('dc_cnb_read_more_hover_color', '#e24545');
 	    add_option('dc_cnb_debug_mode', 0);
 	}
 

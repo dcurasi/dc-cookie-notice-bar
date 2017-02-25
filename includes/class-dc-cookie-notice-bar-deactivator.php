@@ -27,7 +27,7 @@ class Dc_Cookie_Notice_Bar_Deactivator {
 	 *
 	 * Long Description.
 	 *
-	 * @since    1.1.0
+	 * @since    1.3.0
 	 */
 	public static function deactivate() {
 		delete_option('dc_cnb_activate');
@@ -44,6 +44,8 @@ class Dc_Cookie_Notice_Bar_Deactivator {
 	    delete_option('dc_cnb_button_color');
 	    delete_option('dc_cnb_button_padding');
 	    delete_option('dc_cnb_button_border_radius');
+	    delete_option('dc_cnb_read_more_color');
+	    delete_option('dc_cnb_read_more_hover_color');
 	    delete_option('dc_cnb_debug_mode');
 	    setcookie("dc_cnb_cookie", null, -1, "/");
 	}
